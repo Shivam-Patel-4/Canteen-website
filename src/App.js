@@ -3,6 +3,7 @@ import canteenLogo from './images/canteenLogo.png';
 import './App.css';
 import MenuItemCard from './Components/MenuItemCard';
 import menuItemsData from './menuItemData/MenuItemData';
+import Cart from './Components/Cart';
 
 function App() {
 
@@ -19,14 +20,14 @@ function App() {
             ? { ...cartItem, quantity: cartItem.quantity + 1, totalItemPrice: (cartItem.quantity + 1) * Number(item.price) }
             : cartItem;
 
-          console.log('Updated Cart Item:', updatedCartItem);
+          // console.log('Updated Cart Item:', updatedCartItem);
           return updatedCartItem;
         })
       );
     } else {
       setCart((prevCart) => {
         const newItem = { ...item, quantity: 1, totalItemPrice: Number(item.price) };
-        console.log('New Cart Item:', newItem);
+        // console.log('New Cart Item:', newItem);
         return [...prevCart, newItem];
       });
     }
@@ -56,26 +57,8 @@ function App() {
           ))}
         </div>
       </div>
+      <Cart cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
 
-      <div className="cart">
-        <h2>Cart</h2>
-        <ul>
-          {cart.map((cartItem) => (
-            <li key={cartItem.id}>
-              <img
-                src={cartItem.image}
-                alt={cartItem.name}
-                style={{ width: '30px', height: '30px', marginRight: '10px' }}
-              />
-              {cartItem.name} - {cartItem.price} *{cartItem.quantity} = ${cartItem.totalItemPrice.toFixed(2)}
-              <button onClick={() => handleRemoveFromCart(cartItem.id)}>Delete</button>
-            </li>
-          ))}
-        </ul>
-        <div>
-          <strong>Total Cart Price:</strong> ${totalCartPrice.toFixed(2)}
-        </div>
-      </div>
     </div>
   );
 }
