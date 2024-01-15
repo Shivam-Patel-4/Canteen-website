@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import canteenLogo from './images/canteenLogo.png';
 import './App.css';
 import MenuItemCard from './Components/MenuItemCard';
+import CartPage from '../src/Pages/CartPage';
 import menuItemsData from './menuItemData/MenuItemData';
-import Cart from './Components/Cart';
 
 function App() {
 
@@ -43,23 +44,41 @@ function App() {
   }, [cart]);
 
   return (
+    <Router>
     <div className="App row">
       <header className='col-12 text-center'>
         <img src={canteenLogo} alt="logo" className='logo' />
+        <Link to="/cart">
+          <button type="button" className="btn position-relative ">
+            <i className="bi bi-bag-fill" style={{ fontSize: '25px' }}></i>
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {cart.reduce((total, cartItem) => total + cartItem.quantity, 0)}
+              <span className="visually-hidden">unread messages</span>
+            </span>
+          </button>
+        </Link>
       </header>
 
       <div className="container-fluid">
         <div className="row justify-content-center">
           {menuItemsData.map((item, index) => (
-            <div key={item.id} className="col-lg-3 col-md-4 mt-2">
+            <div key={item.id} className=" col-xl-3 col-lg-4 col-md-6 mt-2">
               <MenuItemCard {...item} onAddToCart={handleAddToCart} />
             </div>
           ))}
         </div>
       </div>
-      <Cart cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
 
+      <Routes>
+        <Route
+          path="/cart"
+          element={<CartPage cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} onClose={() => window.history.back()} />}
+        />
+      </Routes>
+
+      
     </div>
+  </Router>
   );
 }
 

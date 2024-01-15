@@ -5,16 +5,25 @@ const MenuItemCard = ({ id, name, description, price, image, onAddToCart }) => {
 
     return (
         <div className='menu-item'>
-                <div className="card m-2 p-2">
-                    <img src={image} className="img-fluid" alt="..." />
-                    <div className="card-body">
-                        <h2 className="card-title">{name}</h2>
-                        <p className="card-text">{description}</p>
-                        <h5>Price: &#8377;{price}</h5>
-                        <button onClick={() => onAddToCart({ id, name, price, image })}>Add to Cart</button>
+            <div className="row m-1 align-items-center">
+                <div className="col-md-4 col-4">
+                    <div className="">
+                        <img src={image} className="img-fluid" alt="..." />
                     </div>
                 </div>
+                <div className="col-md-8 col-8 menuItemBody">
+                    <div>
+                        <div>
+                            <h4 className="card-title">{name}</h4>
+                            <p className="card-text">{description}</p>
+                            <h5>&#8377;{price}</h5>
+                            <button onClick={() => onAddToCart({ id, name, price, image })}>ADD +1</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     );
 };
 
