@@ -18,7 +18,7 @@ const Cart = ({ cart, totalCartPrice, handleRemoveFromCart }) => {
             ))}
             <hr/>
             <div>
-                <strong>Total Cart Price:</strong> &#8377;{totalCartPrice.toFixed(2)}
+                <strong>Total Item Price:</strong> &#8377;{totalCartPrice.toFixed(2)}
             </div>
         </div>
     );
