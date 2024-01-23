@@ -16,6 +16,7 @@ const Cart = ({ cart, totalCartPrice, handleRemoveFromCart }) => {
                     <button onClick={() => handleRemoveFromCart(cartItem.id)}><i class="bi bi-trash3-fill"></i></button>
                 </div>
             ))}
+            <hr/>
             <div>
                 <strong>Total Cart Price:</strong> &#8377;{totalCartPrice.toFixed(2)}
             </div>

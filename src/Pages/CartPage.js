@@ -6,7 +6,7 @@ const CartPage = ({ cart, totalCartPrice, handleRemoveFromCart, onClose }) => {
   return (
     <div className="cart-page">
       <button onClick={onClose} className="close-btn text-end">Close</button>
-      <Cart cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
+      <Cart className="cart-name" cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
     </div>
   );
 }

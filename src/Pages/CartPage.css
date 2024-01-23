@@ -2,12 +2,13 @@
     width: 26%;
     background-color:#e9ecef;
     position: absolute;
-    top: 125px;
+    /* float: bottom; */
+    top: 150px;
     right: 20px;
-    padding: 7px 3px;
+    padding: 5px 3px;
     border-radius: 10px;
     margin-left: 3px;
-    
+    border: 2px solid black;
 }
 
 .cart-page button {
@@ -15,11 +16,9 @@
     border-radius: 50px;
     background-color:transparent;
     float: right;
-    margin-right: 5px;
-    margin-top: 5px;
-    color:red;
-    
-
+    margin-right:3px;
+    margin-top: 2px;
+    color:rgb(207, 73, 73);
 }
 
 
