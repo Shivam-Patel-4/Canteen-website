@@ -7,3 +7,12 @@
 body {
     background-color: #e0e0e0;
 }
+
+.cart-btn:focus {
+    border: none;
+    
+}
+
+.cart-btn:hover{
+    color: black;
+}

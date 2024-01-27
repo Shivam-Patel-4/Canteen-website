@@ -2,6 +2,7 @@ import React from 'react';
 import '../Components/MenuItemCard.css';
 
 const MenuItemCard = ({ id, name, description, price, image, onAddToCart }) => {
+
     return (
         <div className='menu-item'>
             <div className="row m-1 align-items-center">
@@ -17,14 +18,14 @@ const MenuItemCard = ({ id, name, description, price, image, onAddToCart }) => {
                             <p className="card-text">{description}</p>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <h5>&#8377;{price}</h5>
-                                <button onClick={() => onAddToCart({ id, name, price, image })}>ADD +1</button>
+                                <button onClick={() => onAddToCart({ id, name, price, image })} id='liveToastBtn'>ADD +1</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-
     );
 };
 

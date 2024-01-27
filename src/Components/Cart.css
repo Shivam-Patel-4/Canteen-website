@@ -1,11 +1,11 @@
 .cart button {
     margin-left: 20px;
-    border: 1px solid red;
+    border: 1px solid red !important;
     background: none;
     color: red;
     font-size: 20px;
+    border-radius: 0 !important;
 }
-
 @media screen and (max-width: 600px) {
     /* .cart img {
         width: 65px;

@@ -4,7 +4,8 @@ import '../Components/Cart.css';
 const Cart = ({ cart, totalCartPrice, handleRemoveFromCart }) => {
     return (
         <div className="cart">
-            <h2>Cart</h2>
+            <h2 className='text-center'>Cart</h2>
+            <hr/>
             {cart.map((cartItem) => (
                 <div key={cartItem.id}>
                     <img
@@ -14,6 +15,7 @@ const Cart = ({ cart, totalCartPrice, handleRemoveFromCart }) => {
                     />
                     <b>{cartItem.name}</b> - &#8377;{cartItem.price} &#xd7;{cartItem.quantity} = &#8377;{cartItem.totalItemPrice.toFixed(2)}
                     <button onClick={() => handleRemoveFromCart(cartItem.id)}><i class="bi bi-trash3-fill"></i></button>
+                    <hr/>
                 </div>
             ))}
             <hr/>

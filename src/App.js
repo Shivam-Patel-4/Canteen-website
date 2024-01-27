@@ -43,42 +43,44 @@ function App() {
     setTotalCartPrice(totalPrice);
   }, [cart]);
 
+ 
+
   return (
     <Router>
-    <div className="App row">
-      <header className='col-12 text-center'>
-        <img src={canteenLogo} alt="logo" className='logo' />
-        <Link to="/cart">
-          <button type="button" className="btn position-relative ">
-            <i className="bi bi-bag-fill" style={{ fontSize: '25px' }}></i>
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              {cart.reduce((total, cartItem) => total + cartItem.quantity, 0)}
-              <span className="visually-hidden">unread messages</span>
-            </span>
-          </button>
-        </Link>
-      </header>
+      <div className="App row">
+        <header className='col-12 d-flex justify-content-between align-items-center'>
+          <img src={canteenLogo} alt="logo" className='logo' />
+          <Link to="/cart">
+            <button type="button" className="btn position-relative cart-btn" onClick={() => window.history.back()}>
+              <i className="bi bi-bag-fill" style={{ fontSize: '25px', color: 'green' }}></i>
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                {cart.reduce((total, cartItem) => total + cartItem.quantity, 0)}
+                <span className="visually-hidden">unread messages</span>
+              </span>
+            </button>
+          </Link>
+        </header>
 
-      <div className="container-fluid">
-        <div className="row justify-content-center">
-          {menuItemsData.map((item, index) => (
-            <div key={item.id} className=" col-xl-3 col-lg-4 col-md-6 mt-2">
-              <MenuItemCard {...item} onAddToCart={handleAddToCart} />
-            </div>
-          ))}
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            {menuItemsData.map((item, index) => (
+              <div key={item.id} className=" col-xl-3 col-lg-4 col-md-6 mt-2">
+                <MenuItemCard {...item} onAddToCart={handleAddToCart} />
+              </div>
+            ))}
+          </div>
         </div>
+
+        <Routes>
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} onClose={() => window.history.back()} />}
+          />
+        </Routes>
+
+
       </div>
-
-      <Routes>
-        <Route
-          path="/cart"
-          element={<CartPage cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} onClose={() => window.history.back()} />}
-        />
-      </Routes>
-
-      
-    </div>
-  </Router>
+    </Router>
   );
 }
 

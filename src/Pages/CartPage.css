@@ -12,13 +12,14 @@
 }
 
 .cart-page button {
-    border: 1px solid black;
-    border-radius: 50px;
-    background-color:transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    
+    background-color: transparent;
     float: right;
     margin-right:3px;
     margin-top: 2px;
-    color:rgb(207, 73, 73);
+    /* color:rgb(0, 0, 0); */
 }
 
 

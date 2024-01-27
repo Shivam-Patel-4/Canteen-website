@@ -5,8 +5,8 @@ import '../Pages/CartPage.css';
 const CartPage = ({ cart, totalCartPrice, handleRemoveFromCart, onClose }) => {
   return (
     <div className="cart-page">
-      <button onClick={onClose} className="close-btn text-end">Close</button>
-      <Cart className="cart-name" cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
+      <button onClick={onClose} className="close-btn text-end"><i class="bi bi-x-lg"></i></button>
+      <Cart cart={cart} totalCartPrice={totalCartPrice} handleRemoveFromCart={handleRemoveFromCart} />
     </div>
   );
 }
