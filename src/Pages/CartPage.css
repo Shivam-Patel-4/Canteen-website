@@ -1,28 +1,24 @@
 .cart-page {
-    width: 26%;
-    background-color:#e9ecef;
-    position: absolute;
-    /* float: bottom; */
-    top: 150px;
-    right: 20px;
     padding: 5px 3px;
+    height: 72vh;
     border-radius: 10px;
     margin-left: 3px;
-    border: 2px solid black;
+    overflow-y: auto;
 }
-
+.cart-page::-webkit-scrollbar{
+    display: none;
+}
+.close-btn{
+    border: none;
+}
 .cart-page button {
-    border: 2px solid black;
-    border-radius: 50%;
-    
     background-color: transparent;
     float: right;
-    margin-right:3px;
-    margin-top: 2px;
-    /* color:rgb(0, 0, 0); */
+    /* margin-right:3px; */
+    /* margin-top: 2px; */
 }
 
-
+/* 
 @media screen and (max-width: 1600px) {
     .cart-page {
         width: 28%;
@@ -54,4 +50,4 @@
         right: 10px;
     }
 
-}
+} */

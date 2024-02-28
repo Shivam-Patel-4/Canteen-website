@@ -4,7 +4,7 @@ import canteenLogo from './images/canteenLogo.png';
 import './App.css';
 import CartPage from '../src/Pages/CartPage';
 import Home from './Pages/Home';
-import { categoriesData } from './menuItemData/MenuItemData';
+
 
 function App() {
 
@@ -42,19 +42,8 @@ function App() {
         </Link>
       </header>
 
-      {/* categories row */}
-      <div className='d-flex gap-3 mx-3 overflow-x-auto'>
-        <div className='badge bg-info'>
-          All
-        </div>
-        {
-          categoriesData.map(category => (
-            <div key={category?.id} className='badge bg-info'>
-              {category?.category}
-            </div>
-          ))
-        }
-      </div>
+      
+      
 
       <Routes>
         <Route
