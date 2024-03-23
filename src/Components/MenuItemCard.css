@@ -1,10 +1,12 @@
 .menuItemBody {
     margin: 0;
     padding: 13px 0;
-    /* background-color: rgb(201, 134, 42); */
-    /* background-color: rgb(231, 229, 229); */
+    /* background-color: rgb(201, 134, 42); 
+     background-color: rgb(231, 229, 229);  */
 }
 
+
+/* Add to cart button */
 .menu-item button {
     border: 1px solid green;
     padding: 3px 20px;

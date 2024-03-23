@@ -1,8 +1,13 @@
 import React from "react";
 import MenuItemCard from "../Components/MenuItemCard";
-import { menuItemsData, categoriesData } from "../menuItemData/MenuItemData";
+import { menuItemsData } from "../menuItemData/MenuItemData";
+import NavBar from "../Components/NavBar";
+
+import "../Pages/Home.css";
 
 const Home = ({ cart, setCart }) => {
+  
+
   const handleAddToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
 
@@ -37,15 +42,9 @@ const Home = ({ cart, setCart }) => {
 
   return (
     <div className="container-fluid">
-      <div className="d-flex gap-3 mx-3 overflow-x-auto navSelect">
-        {categoriesData.map((category) => (
-          <div key={category?.id} className="badge bg-success">
-            {category?.category}
-          </div>
-        ))}
-      </div>
 
-      
+      <NavBar/>
+
       <div className="row justify-content-center">
         {menuItemsData.map((item, index) => (
           <div key={item.id} className=" col-xl-3 col-lg-4 col-md-6 mt-2">

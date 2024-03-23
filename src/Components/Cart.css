@@ -15,10 +15,10 @@
 }
 
 @media screen and (max-width: 600px) {
-    /* .cart img {
+    .cart img {
         width: 65px;
         height: 65px;
-    } */
+    }
     .cart button{
         margin-left: 5px;
     }
