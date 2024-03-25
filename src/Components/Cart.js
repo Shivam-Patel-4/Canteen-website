@@ -27,6 +27,9 @@ const Cart = ({ cart, totalCartPrice, handleRemoveFromCart, handleUpdateCart }) 
             <div className="continue-shopping">
                 <Link to="/" className="btn btn-primary">Continue Shopping</Link>
             </div>
+            <div className="continue-shopping">
+                <Link to="/" className="btn btn-primary">Continue Checkout </Link>
+            </div>
         </div>
     );
 }
