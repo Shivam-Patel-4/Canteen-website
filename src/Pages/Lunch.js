@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
 
-const BreakFast = () => {
+const Lunch = () => {
     return(
         <>
         <NavBar/>
-        <div>breakfast</div>
+        <div>Launch</div>
         </>
     );
 };
 
-export default BreakFast;
+export default Lunch;

@@ -1,68 +1,95 @@
-import foodImg from '../images/foodImg.webp';
+import coffee from '../images/cofee.jpg';
+import dalchaval from '../images/dalchaval.webp';
+import dosa from '../images/dosa.jpg';
+import ideli from '../images/ideli.jpg';
+import tea from '../images/tea.jpg';
+import khaman from '../images/khaman.jpg';
+import pasta from '../images/pasta.jpg';
+import pavbhaji from '../images/pavbhaji.jpg';
+import povabataka from '../images/povabataka.jpg';
+import rajmachval from '../images/rajmachaval.jpg';
+import salad from '../images/salad.jpg';
+import samosa from '../images/samosa.jpg';
+import sandwitch from '../images/sandwitch.jpg';
 
 export const menuItemsData = [
   {
     id: 1, 
-    name: 'Lolipop',
+    name: 'Coffee',
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '20', 
+    image: coffee,
+    category: 1
+  },
+  {
+    id: 1, 
+    name: 'Tea',
+    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    price: '15', 
+    image: tea,
     category: 1
   },
   { 
     id: 2, 
-    name: 'Pasta', 
+    name: 'Dosa', 
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '60', 
+    image: dosa,
     category: 2
   },
   { 
     id: 3, 
-    name: 'Salad', 
+    name: 'Ideli', 
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '45', 
+    image: ideli,
     category: 3
   },
   { 
     id: 4, 
-    name: 'Biryani', 
+    name: 'Salad', 
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '30', 
+    image: salad,
     category: 4
   },
   { 
     id: 5, 
-    name: 'Chicken', 
+    name: 'Khaman', 
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '40', 
+    image: khaman,
     category: 5
   },
   { 
     id: 6, 
-    name: 'Nuggets', 
+    name: 'Samosa', 
     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-    price: '150', 
-    image: foodImg,
+    price: '40', 
+    image: samosa,
     category: 5
   },
    { 
      id: 7, 
-     name: 'Puff', 
+     name: 'Pasta', 
      description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-     price: '150', 
-     image: foodImg,
+     price: '50', 
+     image: pasta,
      category: 5
    },
    { 
      id: 8, 
-     name: 'Nuggets', 
+     name: 'Pova Bataka', 
      description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
-     price: '150', 
-     image: foodImg
+     price: '50', 
+     image: povabataka
+   },
+   { 
+     id: 8, 
+     name: 'SandWitch', 
+     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+     price: '60', 
+     image: sandwitch
    },
   // { 
   //   id: 9, 

@@ -1,8 +1,6 @@
 import React from "react";
 import MenuItemCard from "../Components/MenuItemCard";
 import { menuItemsData } from "../menuItemData/MenuItemData";
-import NavBar from "../Components/NavBar";
-
 import "../Pages/Home.css";
 
 const Home = ({ cart, setCart }) => {
@@ -43,7 +41,7 @@ const Home = ({ cart, setCart }) => {
   return (
     <div className="container-fluid">
 
-      <NavBar/>
+     
 
       <div className="row justify-content-center">
         {menuItemsData.map((item, index) => (

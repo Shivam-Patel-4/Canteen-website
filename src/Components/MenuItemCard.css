@@ -1,18 +1,21 @@
 .menuItemBody {
     margin: 0;
     padding: 13px 0;
+
     /* background-color: rgb(201, 134, 42); 
      background-color: rgb(231, 229, 229);  */
 }
-
+.menu-item img {
+    object-fit: cover;
+}
 
 /* Add to cart button */
 .menu-item button {
-    border: 1px solid green;
+    border: 1px solid #fd7014;
     padding: 3px 20px;
     margin-top: 5px;
     background-color: #fff;
-    color: green;
+    color: #fd7014;
     font-weight: bold;
     /* box-shadow: 0px 0px 3px green; */
     border-radius: 5px;
@@ -21,28 +24,83 @@
 
 .menu-item button:active {
     transform: scale(1.1);
-    text-shadow: 0px 0px 2px green;
-    box-shadow: 0px 0px 3px green;
+    text-shadow: 0px 0px 2px #fd7014;
+    box-shadow: 0px 0px 3px #fd7014;
 
 }
 
 .menu-item {
-    /* border: 1px solid rgb(95, 93, 93); */
-    /* box-shadow: 0px 0px 4px grey; */
-    border-radius: 10px;
-    background: linear-gradient(145deg, #cacaca, #f0f0f0);
-    box-shadow: 8px 8px 14px #acacac,
-        -8px -8px 14px #ffffff;
+    border-radius: 30px;
+    background-color: #EEEEEE;
+    border-right: 8px solid #fd7014;
+    border-left: 8px solid #fd7014;
+    /* box-shadow: 5px 10px 8px #393e46; */
     
 }
 
-.menuItemBody h5,
-h2,
-p {
+.menuItemBody h4{
     margin: 0;
+    color: #fd7014;
+}
+
+.menuItemBody h5 {
+    color: #212121;
 }
 
 .menuItemBody p {
     font-size: 14px;
-    color: rgb(85, 84, 84);
+    /* color: rgb(130, 128, 128); */
+    color: #242424d0;
 }
+/* MenuItemCard.css */
+
+.menu-item {
+    background-color: #fff; /* Change to your desired background color */
+    border: 1px solid #e0e0e0; /* Add border for separation */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    padding: 10px;
+    margin-bottom: 20px; /* Add margin bottom for spacing between cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  }
+  
+  .menu-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add stronger shadow on hover */
+  }
+  
+  .menu-item img {
+    width: 100%; /* Ensure image fills its container */
+    border-radius: 8px; /* Add border radius for rounded corners */
+  }
+  
+  .menuItemBody {
+    padding-left: 20px; /* Add left padding for content */
+  }
+  
+  .card-title {
+    margin-bottom: 5px; /* Add margin bottom below title */
+    font-size: 1.25rem; /* Adjust title font size */
+  }
+  
+  .card-text {
+    margin-bottom: 10px; /* Add margin bottom below description */
+  }
+  
+  h5 {
+    margin: 0; /* Remove default margin for price */
+    font-size: 1.1rem; /* Adjust price font size */
+  }
+  
+  button {
+    background-color: #fd7014; /* Change to your desired button color */
+    color: #fff; /* Change to your desired button text color */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+  }
+  
+  button:hover {
+    background-color: #ff8c42; /* Change to your desired button hover color */
+  }
+  

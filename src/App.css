@@ -1,3 +1,40 @@
+/* Resetting default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic typography */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Default text color */
+}
+
+/* Basic layout */
+.container {
+    width: 80%; /* Or any preferred width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Links */
+a {
+    color: #007bff; /* Default link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Images */
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+}
+
+
 * {
     font-family: 'League Spartan', sans-serif;
 }
@@ -15,7 +52,11 @@
     width: 100vw;
 }
 body {
-    background-color: #e0e0e0;
+    background-color: #222831;
+}
+
+.cart-btn i{
+    filter: drop-shadow(0px 4px 10px #fd7014);
 }
 
 .cart-btn:focus {
@@ -32,4 +73,8 @@ body {
 
 .navSelect::-webkit-scrollbar{
     display: none;
+}
+.body{
+    background-color: #222831;
+    height: 100vh;
 }
