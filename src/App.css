@@ -1,80 +1,143 @@
 /* Resetting default browser styles */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 /* Basic typography */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333; /* Default text color */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333; /* Default text color */
 }
 
 /* Basic layout */
 .container {
-    width: 80%; /* Or any preferred width */
-    margin: 0 auto; /* Center the container */
+  width: 80%; /* Or any preferred width */
+  margin: 0 auto; /* Center the container */
 }
 
 /* Links */
 a {
-    color: #007bff; /* Default link color */
-    text-decoration: none;
+  color: #007bff; /* Default link color */
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Images */
 img {
-    max-width: 100%; /* Make images responsive */
-    height: auto;
+  max-width: 100%; /* Make images responsive */
+  height: auto;
 }
 
-
 * {
-    font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 .logo {
-    width: 120px;
-}
-.App{
-    margin: 0;
-}
-.header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-}
-body {
-    background-color: #222831;
+  margin: 15px;
+  /* width: 120px; */
+  color: White;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 0.5rem;
 }
 
-.cart-btn i{
-    filter: drop-shadow(0px 4px 10px #fd7014);
+.logo span {
+  display: inline-block;
+  animation: bounce 3s infinite alternate;
+}
+
+/* Apply animation delay to each letter */
+.logo span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.logo span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.logo span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.logo span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Keyframes animation for the bounce effect */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-15px);
+    color: #fd7014;
+    text-shadow: 0px 0px 9px #fd7014;
+  }
+  50% {
+    transform: translateY(0);
+    color: white;
+    text-shadow: 0px 0px 9px white;
+  }
+  70% {
+    transform: translateY(15px);
+    color: #fd7014;
+    text-shadow: 0px 0px 9px #fd7014;
+  }
+  100% {
+    transform: translateY(0);
+    color: white;
+    text-shadow: 0px 0px 9px white;
+  }
+}
+
+.App {
+  margin: 0;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+body {
+  background-color: #222831;
+}
+
+.cart-btn i {
+  filter: drop-shadow(0px 4px 10px #fd7014);
 }
 
 .cart-btn:focus {
-    border: none;
-    
+  border: none;
 }
 
-.cart-btn:hover{
-    color: black;
+.cart-btn:hover {
+  color: black;
 }
 .navSelect {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.navSelect::-webkit-scrollbar{
-    display: none;
+.navSelect::-webkit-scrollbar {
+  display: none;
 }
-.body{
-    background-color: #222831;
-    height: 100vh;
+.body {
+  background-color: #222831;
+  height: 100vh;
 }

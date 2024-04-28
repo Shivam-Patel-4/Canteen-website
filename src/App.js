@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import canteenLogo from "./images/canteenLogo.png";
+// import canteenLogo from "./images/canteenLogo.png";
 import "./App.css";
 import CartPage from "../src/Pages/CartPage";
 import Home from "./Pages/Home";
 import NavBar from "./Components/NavBar";
+import Lunch from "../src/Pages/Lunch";
+import Dinner from "../src/Pages/Dinner";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -25,14 +27,22 @@ function App() {
     );
     setTotalCartPrice(totalPrice);
   }, [cart]);
-  const postData= async (e) =>{
+  const postData = async (e) => {
     e.preventDefoult();
-  }
-  return(
-      <Router>
-        <div className="body">
+  };
+
+  return (
+    <Router>
+      <div className="body">
         <header className="header-row">
-          <img src={canteenLogo} alt="logo" className="logo" />
+          {/* <h1 className="logo">CFMS</h1> */}
+          <h1 class="logo">
+            <span>C</span>
+            <span>F</span>
+            <span>M</span>
+            <span>S</span>
+          </h1>
+
           <Link to="/cart">
             <button
               type="button"
@@ -55,7 +65,6 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
-
           <Route
             path="/cart"
             element={
@@ -66,10 +75,15 @@ function App() {
               />
             }
           />
+          <Route path="/Brakefast" element={<Lunch />} />
         </Routes>
-   
-        </div>
-      </Router>
+        <Routes>
+          <Route path="/breakfast" element={<Lunch />} /> {/* Redirect to Breakfast page */}
+          <Route path="/lunch" element={<Lunch />} /> {/* Redirect to Lunch page */}
+          <Route path="/dinner" element={<Dinner />} /> {/* Redirect to Dinner page */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

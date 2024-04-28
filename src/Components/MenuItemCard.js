@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
+import CheckIcon from '@mui/icons-material/Check';  
 import "../Components/MenuItemCard.css";
+import { addDoc, collection, getDocs, doc, updateDoc, deleteDoc, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
 
 const MenuItemCard = ({ id, name, description, price, image, onAddToCart }) => {
-
+  const [foodItems, setFoodItems] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
+  const handleDelete = async (id) => {
+    const foodItemRef = doc(db, "foodItems", id);
+
+    try {
+      await deleteDoc(foodItemRef);
+    } catch (e) {
+      console.error("Error deleting document: ", e);
+    }
+  };
   const handleAddToCart = () => {
     onAddToCart({ id, name, price, image });
     setShowAlert(true); // Show the alert when item is added to cart
@@ -40,7 +51,6 @@ const MenuItemCard = ({ id, name, description, price, image, onAddToCart }) => {
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );

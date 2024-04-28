@@ -16,7 +16,7 @@ export const menuItemsData = [
   {
     id: 1, 
     name: 'Coffee',
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Coffee', 
     price: '20', 
     image: coffee,
     category: 1
@@ -24,7 +24,7 @@ export const menuItemsData = [
   {
     id: 1, 
     name: 'Tea',
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Masala Tea', 
     price: '15', 
     image: tea,
     category: 1
@@ -32,7 +32,7 @@ export const menuItemsData = [
   { 
     id: 2, 
     name: 'Dosa', 
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Dosa + Chatni', 
     price: '60', 
     image: dosa,
     category: 2
@@ -40,7 +40,7 @@ export const menuItemsData = [
   { 
     id: 3, 
     name: 'Ideli', 
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Ideli + Chatni', 
     price: '45', 
     image: ideli,
     category: 3
@@ -48,7 +48,7 @@ export const menuItemsData = [
   { 
     id: 4, 
     name: 'Salad', 
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Mix Salad', 
     price: '30', 
     image: salad,
     category: 4
@@ -56,7 +56,7 @@ export const menuItemsData = [
   { 
     id: 5, 
     name: 'Khaman', 
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Khaman + Mustard seeds', 
     price: '40', 
     image: khaman,
     category: 5
@@ -64,7 +64,7 @@ export const menuItemsData = [
   { 
     id: 6, 
     name: 'Samosa', 
-    description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+    description: 'Samosa + Chatni', 
     price: '40', 
     image: samosa,
     category: 5
@@ -72,7 +72,7 @@ export const menuItemsData = [
    { 
      id: 7, 
      name: 'Pasta', 
-     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+     description: 'Pasta', 
      price: '50', 
      image: pasta,
      category: 5
@@ -80,14 +80,14 @@ export const menuItemsData = [
    { 
      id: 8, 
      name: 'Pova Bataka', 
-     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+     description: 'Pova Bataka + Sev', 
      price: '50', 
      image: povabataka
    },
    { 
      id: 8, 
      name: 'SandWitch', 
-     description: 'Jeera Aloo[250gm] + Daal Fry[250gm]+ 3 Roti+ Jeera Rice[250gm]', 
+     description: 'SandWitch + Ketchup', 
      price: '60', 
      image: sandwitch
    },

@@ -2,12 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getMessaging, getToken } from "@firebase/messaging";
-import firebase from 'firebase/app'; // Import only the base Firebase module
-import 'firebase/database'; // Import Firebase Realtime Database
-
-
-
-
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyB6KZeSC1FNp2bBEkcO9QUYc-ACR7IuoYM",
   authDomain: "canteen-website-bds.firebaseapp.com",
@@ -17,4 +12,23 @@ const firebaseConfig = {
   appId: "1:475172613578:web:8b4d76be1d437cd4f67333",
   measurementId: "G-BCD9ZBP7HC",
 };
-firebase.initializeApp(firebaseConfig); // Initialize Firebase with your config
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const messaging = getMessaging(app);
+
+
+export const generateToken = async () => {
+  const Permission = await Notification.requestPermission();
+  console.log(Permission);
+  if (Permission === "granted") {
+    const token = await getToken(messaging, {
+      vapidKey:
+        "BFSk21y-sNxTR2VsGx08LugpiSPvenIxUWV44vUvmthl4UrMrpBMb2AFq2KIrlnDyKxb00xKY3kDYKCTixK-L68",
+    });
+    console.log(token);
+  }
+};
+

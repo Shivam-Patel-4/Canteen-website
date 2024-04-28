@@ -68,8 +68,9 @@
   }
   
   .menu-item img {
-    width: 100%; /* Ensure image fills its container */
-    border-radius: 8px; /* Add border radius for rounded corners */
+    width: 100%;
+     /* Ensure image fills its container */
+    border-radius: 20px; /* Add border radius for rounded corners */
   }
   
   .menuItemBody {
