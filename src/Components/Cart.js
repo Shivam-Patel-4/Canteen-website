@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Components/Cart.css";
 
+const handleCheckout = () => {
+
+  alert("Checkout initiated!")
+};
+
 const Cart = ({
   cart,
   totalCartPrice,
@@ -26,6 +31,7 @@ const Cart = ({
           <hr />
         </div>
       ))}
+      
       <div className="position-absolute bottom-0 start-0 cartTotal">
         <div className="con-btn-parents">
           <div className="continue-shopping">
@@ -33,11 +39,10 @@ const Cart = ({
               Continue Shopping
             </Link>
           </div>
-          <div className="continue-shopping">
-            <Link to="/" className="checkout">
-              Continue Checkout
-            </Link>
-          </div>
+          <button className="checkout" onClick={handleCheckout}>
+  Continue Checkout
+</button>
+
         </div>
         <div>
           <strong className="">Total Cart Price :</strong> &#8377;

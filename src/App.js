@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import canteenLogo from "./images/canteenLogo.png";
 import "./App.css";
 import CartPage from "../src/Pages/CartPage";
 import Home from "./Pages/Home";
 import NavBar from "./Components/NavBar";
 import Lunch from "../src/Pages/Lunch";
 import Dinner from "../src/Pages/Dinner";
-
+import firebase from "../src/firebase";
 function App() {
   const [cart, setCart] = useState([]);
   const [totalCartPrice, setTotalCartPrice] = useState(0);
@@ -27,21 +26,22 @@ function App() {
     );
     setTotalCartPrice(totalPrice);
   }, [cart]);
+
   const postData = async (e) => {
-    e.preventDefoult();
+    e.preventDefault();
   };
 
   return (
     <Router>
       <div className="body">
         <header className="header-row">
-          {/* <h1 className="logo">CFMS</h1> */}
-          <h1 class="logo">
+          <h1 className="logo">
             <span>C</span>
             <span>F</span>
             <span>M</span>
             <span>S</span>
           </h1>
+          <NavBar />
 
           <Link to="/cart">
             <button
@@ -62,7 +62,7 @@ function App() {
             </button>
           </Link>
         </header>
-        <NavBar />
+
         <Routes>
           <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
           <Route
@@ -75,12 +75,9 @@ function App() {
               />
             }
           />
-          <Route path="/Brakefast" element={<Lunch />} />
-        </Routes>
-        <Routes>
-          <Route path="/breakfast" element={<Lunch />} /> {/* Redirect to Breakfast page */}
-          <Route path="/lunch" element={<Lunch />} /> {/* Redirect to Lunch page */}
-          <Route path="/dinner" element={<Dinner />} /> {/* Redirect to Dinner page */}
+          <Route path="/breakfast" element={<Lunch />} />
+          <Route path="/lunch" element={<Lunch />} />
+          <Route path="/dinner" element={<Dinner />} />
         </Routes>
       </div>
     </Router>
