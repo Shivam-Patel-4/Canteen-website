@@ -1,81 +1,88 @@
 import React, { useState, useEffect } from "react";
-import firebase from "../firebase";
-import {
-    collection,
-    getDocs,
-    query,
-    orderBy,
-    where
-  } from "firebase/firestore"; // Import Firestore functions
-  import { firestore } from "../firebase"; // Assuming import from firebase.js
+import MenuItemCard from "../Components/MenuItemCard";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
-const Dinner = () => {
+const Dinner = ({ cart, setCart, handleUpdateCart }) => {
   const [foodItems, setFoodItems] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    const fetchDinnerItems = async () => {
+    const fetchFoodItems = async () => {
       try {
-        const dinnerRef = collection(firestore, "foodItems");
-        const dinnerQuery = query(
-          dinnerRef,
-          orderBy("foodName", "asc"),
-          where("foodCategory", "==", "dinner")
+        const foodItemsCollection = collection(db, "foodItems");
+        const foodItemsQuery = query(
+          foodItemsCollection,
+          where("foodCategory", "==", "dinner") // Filter items where foodCategory is "lunch"
         );
-        const querySnapshot = await getDocs(dinnerQuery);
-        const dinnerItems = [];
+        const querySnapshot = await getDocs(foodItemsQuery);
+        const items = [];
         querySnapshot.forEach((doc) => {
-          const dinnerItem = {
-            id: doc.id,
-            ...doc.data()
-          };
-          dinnerItems.push(dinnerItem);
+          items.push({ id: doc.id, ...doc.data() });
         });
-        setFoodItems(dinnerItems);
+        setFoodItems(items);
       } catch (error) {
-        console.error("Error fetching dinner items:", error);
+        console.error("Error fetching food items:", error);
       }
     };
-
-    fetchDinnerItems();
+    fetchFoodItems();
   }, []);
 
+  const handleAddToCart = (item) => {
+    console.log("Item added to cart:", item);
+    
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+  
+    if (existingItem) {
+      console.log("Existing item found in cart:", existingItem);
+      setCart((prevCart) =>
+        prevCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? {
+                ...cartItem,
+                quantity: cartItem.quantity + 1,
+                totalItemPrice: (cartItem.quantity + 1) * Number(item.price), // Calculate total price based on quantity
+              }
+            : cartItem
+        )
+      );
+    } else {
+      console.log("New item added to cart:", item);
+      setCart((prevCart) => [
+        ...prevCart,
+        {
+          ...item,
+          quantity: 1,
+          totalItemPrice: Number(item.price), // Initial total price is same as food price
+        },
+      ]);
+    }
+  
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 1500);
+  };
+  
+
+
   return (
-    <div className="dinner-container">
-      <h2>Dinner Items</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Food Name</th>
-            <th>Details</th>
-            <th>Price (INR)</th>
-            <th>Serve</th>
-            <th>Category</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <tbody>
-          {foodItems.map((foodItem) => (
-            <tr key={foodItem.id}>
-              <td>{foodItem.foodName}</td>
-              <td>{foodItem.foodDetails}</td>
-              <td>{foodItem.foodPrice}</td>
-              <td>{foodItem.foodServe}</td>
-              <td>{foodItem.foodCategory}</td>
-              <td>
-                {foodItem.image ? (
-                  <img
-                    src={foodItem.image}
-                    alt={foodItem.foodName}
-                    style={{ width: "100px", height: "auto" }}
-                  />
-                ) : (
-                  "No image"
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container-fluid">
+      <div className="row justify-content-center">
+        {foodItems.map((item) => (
+          <div key={item.id} className="col-xl-3 col-lg-4 col-md-6 mt-2">
+            <MenuItemCard {...item} onAddToCart={handleAddToCart} />
+          </div>
+        ))}
+      </div>
+      <Snackbar
+        open={showAlert}
+        autoHideDuration={1500}
+        onClose={() => setShowAlert(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert>Added!</Alert>
+      </Snackbar>
     </div>
   );
 };

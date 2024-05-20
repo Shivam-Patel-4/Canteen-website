@@ -11,7 +11,7 @@ const NavBar = () => {
       <label className="radio">
         <NavLink
           to="/"
-          activeClassName="selected"
+          ClassName="selected"
           className="name text-warning"
           style={{ textShadow: '0px 0px 6px #fd7014' }}
         >
@@ -21,7 +21,7 @@ const NavBar = () => {
       <label className="radio">
         <NavLink
           to="/lunch"
-          activeClassName="selected"
+          ClassName="selected"
           className="name text-warning"
           style={{ textShadow: '0px 0px 6px #fd7014' }}
         >
@@ -31,7 +31,7 @@ const NavBar = () => {
       <label className="radio">
         <NavLink
           to="/dinner"
-          activeClassName="selected"
+          ClassName="selected"
           className="name text-warning"
           style={{ textShadow: '0px 0px 6px #fd7014' }}
         >
